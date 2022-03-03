@@ -27,6 +27,6 @@ PATCH: https://novacore-training-todo-api.herokuapp.com/api/task/{id}
 DELETE: https://novacore-training-todo-api.herokuapp.com/api/task/{id}
 ```
 
-## created by [novacore.bg](novacore.bg) for training purposes
+## created by [novacore.bg](https://novacore.bg) for training purposes
 
 you can use this API after dropping us a mail at office[at]novacore.bg with the reason :)
