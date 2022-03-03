@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/reset-tasks', [\App\Http\Controllers\TaskController::class, 'resetAllTasks'])->name('reset-tasks');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use Artisan;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -63,5 +64,11 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         return $task->delete();
+    }
+
+    public function resetAllTasks()
+    {
+        Artisan::call('migrate:fresh --seed');
+        return redirect()->route('home')->with('info','Tasks are deleted and dummy ones are added :)');
     }
 }

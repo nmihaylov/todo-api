@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -38,22 +38,97 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
 
+                @if ($message = Session::get('info'))
+                    <div class="alert alert-danger alert-block alert-dismissible fade show col-8 m-auto">
+                        {{ $message }}
+                    </div>
+                @endif
+
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://novacore.bg" class="underline text-gray-900 dark:text-white">https://novacore.bg</a></div>
+                    <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center">
+                            <div class="ml-4 text-lg leading-7 font-semibold">List all tasks</div>
+                        </div>
+
+                        <div class="ml-12">
+                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                GET: https://novacore-training-todo-api.herokuapp.com/api/task
                             </div>
-                            <div class="flex items-center">
-                                <div>Novacore training tasks API</div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center">
+                            <div class="ml-4 text-lg leading-7 font-semibold">Create task</div>
+                        </div>
+                        <div class="ml-12">
+                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                POST: https://novacore-training-todo-api.herokuapp.com/api/task
+                                <br>
+                                <ul>
+                                    <li>should include “title” as string</li>
+                                    <li>should include “completed” as 1 or 0 to flag if task is completed</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center">
+                            <div class="ml-4 text-lg leading-7 font-semibold">Get task with ID: {id}</div>
+                        </div>
+                        <div class="ml-12">
+                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                GET: https://novacore-training-todo-api.herokuapp.com/api/task/{id}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center">
+                            <div class="ml-4 text-lg leading-7 font-semibold">Update task with ID: {id}</div>
+                        </div>
+                        <div class="ml-12">
+                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                PATCH: https://novacore-training-todo-api.herokuapp.com/api/task/{id}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center">
+                            <div class="ml-4 text-lg leading-7 font-semibold">Delete task with ID: {id}</div>
+                        </div>
+                        <div class="ml-12">
+                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                DELETE: https://novacore-training-todo-api.herokuapp.com/api/task/{id}
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
+
+                    <div class="text-center text-sm text-gray-500 sm:text-left">
+                        <div class="flex items-center">
+                            <div class="ml-1">Novacore training tasks API</div>
+                            <a href="https://novacore.bg" target="_blank" class="ml-1 underline">
+                                novacore.bg
+                            </a>
+                        </div>
+                    </div>
+
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    </div>
+                </div>
+
+                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
+
+                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0" >
+                        <a href="{{ route('reset-tasks') }}" class="ml-1 underline" onclick="confirm('Are you sure? All Tasks will be deleted!')">
+                            Reset tasks
+                        </a>
                     </div>
                 </div>
             </div>
