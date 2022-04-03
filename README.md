@@ -29,4 +29,8 @@ DELETE: https://novacore-training-todo-api.herokuapp.com/api/task/{id}
 
 ## created by [novacore.bg](https://novacore.bg) for training purposes
 
-you can use this API after dropping us a mail at office[at]novacore.bg with the reason :)
+you can use this API freely as long as you drop us a mail at office[at]novacore.bg with the reason :)
+
+## License
+
+This training API code is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
