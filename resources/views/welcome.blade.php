@@ -52,7 +52,7 @@
 
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                GET: https://novacore-training-todo-api.herokuapp.com/api/task
+                                GET: https://novacore-training-todo-api.herokuapp.com/api/tasks
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                POST: https://novacore-training-todo-api.herokuapp.com/api/task
+                                POST: https://novacore-training-todo-api.herokuapp.com/api/tasks
                                 <br>
                                 <ul>
                                     <li>should include “title” as string</li>
@@ -79,7 +79,7 @@
                         </div>
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                GET: https://novacore-training-todo-api.herokuapp.com/api/task/{id}
+                                GET: https://novacore-training-todo-api.herokuapp.com/api/tasks/{id}
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                PATCH: https://novacore-training-todo-api.herokuapp.com/api/task/{id}
+                                PATCH: https://novacore-training-todo-api.herokuapp.com/api/tasks/{id}
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                DELETE: https://novacore-training-todo-api.herokuapp.com/api/task/{id}
+                                DELETE: https://novacore-training-todo-api.herokuapp.com/api/tasks/{id}
                             </div>
                         </div>
                     </div>
