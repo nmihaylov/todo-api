@@ -123,13 +123,19 @@
                     </div>
                 </div>
 
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
+                <div class="flex mt-4 justify-left sm:items-left sm:justify-left">
 
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0" >
-                        <a href="{{ route('reset-tasks') }}" class="ml-1 underline" onclick="confirm('Are you sure? All Tasks will be deleted!')">
+                        <a href="{{ route('reset-tasks') }}" class="ml-1 underline" onclick="return confirm('Are you sure? All Tasks will be deleted!')">
                             Reset tasks
                         </a>
                     </div>
+                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0" >
+                        <a href="{{ route('delete-all-tasks') }}" class="ml-1 underline" onclick="return confirm('Are you sure? All Tasks will be deleted!')">
+                            Delete all tasks
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -71,4 +71,10 @@ class TaskController extends Controller
         Artisan::call('migrate:fresh --seed');
         return redirect()->route('home')->with('info','Tasks are deleted and dummy ones are added :)');
     }
+
+    public function deleteAllTasks()
+    {
+        $tasks = Task::truncate();
+        return redirect()->route('home')->with('info','All tasks are deleted :)');
+    }
 }

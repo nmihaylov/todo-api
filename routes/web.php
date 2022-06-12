@@ -18,3 +18,4 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/reset-tasks', [\App\Http\Controllers\TaskController::class, 'resetAllTasks'])->name('reset-tasks');
+Route::get('/delete-all-tasks', [\App\Http\Controllers\TaskController::class, 'deleteAllTasks'])->name('delete-all-tasks');
