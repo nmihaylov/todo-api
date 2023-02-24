@@ -22,19 +22,18 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
      * @return Response
      */
     public function store(Request $request)
     {
         $task = Task::create($request->all());
+
         return $task;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Task $task
      * @return Task
      */
     public function show(Task $task)
@@ -45,20 +44,18 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param Task $task
      * @return bool
      */
     public function update(Request $request, Task $task)
     {
         $task->update($request->all());
+
         return $task;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param Task $task
      * @return bool
      */
     public function destroy(Task $task)
@@ -69,12 +66,14 @@ class TaskController extends Controller
     public function resetAllTasks()
     {
         Artisan::call('migrate:fresh --seed');
-        return redirect()->route('home')->with('info','Tasks are deleted and dummy ones are added :)');
+
+        return redirect()->route('home')->with('info', 'Tasks are deleted and dummy ones are added :)');
     }
 
     public function deleteAllTasks()
     {
         $tasks = Task::truncate();
-        return redirect()->route('home')->with('info','All tasks are deleted :)');
+
+        return redirect()->route('home')->with('info', 'All tasks are deleted :)');
     }
 }
