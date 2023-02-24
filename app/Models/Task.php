@@ -9,7 +9,7 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title','completed','reminder_on'];
+    protected $fillable = ['title', 'completed', 'reminder_on'];
 
     protected $attributes = [
         'completed' => false,
@@ -18,5 +18,4 @@ class Task extends Model
     protected $casts = [
         'completed' => 'boolean',
     ];
-
 }
